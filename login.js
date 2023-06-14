@@ -6,6 +6,7 @@ const emailInput = document.querySelector(".email");
 const phoneInput = document.querySelector(".user-phone");
 const nameInput = document.querySelector(".username");
 const passwordInput = document.querySelector(".password");
+const requiredInput = document.querySelectorAll('.required');
 
 const emailRegex = /^\S{5,}\@\S+\.\w+$/;
 const phoneRegex = /^[+()-]?\d{10,13}$/;
@@ -23,19 +24,24 @@ emailInput.addEventListener("input", event => {
     if (!emailRegex.test(email)) {
       emailErrorMessage.textContent = "Некоректний формат email-адреси!";
       emailErrorMessage.style.display = "block";
-    } else {
+      login.setAttribute('disabled', 'disabled');
+    } 
+    else {
       emailErrorMessage.style.display = "none";
+      login.removeAttribute('disabled');
     }
   });
   
-  phoneInput.addEventListener("input", event => {
+    phoneInput.addEventListener("input", event => {
     phone = phoneInput.value;
   
     if (!phoneRegex.test(phone)) {
       phoneErrorMessage.textContent = "Некоректний формат!";
       phoneErrorMessage.style.display = "block";
+      login.setAttribute('disabled', 'disabled');
     } else {
       phoneErrorMessage.style.display = "none";
+      login.removeAttribute('disabled');
     }
   });
   
@@ -45,8 +51,10 @@ emailInput.addEventListener("input", event => {
     if (!nameRegex.test(username)) {
       nameErrorMessage.textContent = "Введіть своє повне імʼя з великої літери!";
       nameErrorMessage.style.display = "block";
+      login.setAttribute('disabled', 'disabled');
     } else {
       nameErrorMessage.style.display = "none";
+      login.removeAttribute('disabled');
     }
   });
 

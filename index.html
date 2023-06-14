@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <form class="form">
+      <label class="label">Email-адреса: </label>
+      <input class="email input" type="text" name="email" /><span class="error email-error"></span>
+
+      <label class="label">Телефон: </label>
+      <input class="user-phone input" type="text" name="phone" placeholder="+380" /><span class="error phone-error"></span>
+
+      <label class="label">ПІБ: </label>
+      <input class="username input" type="text" name="fullName" /><span class="error name-error"></span>
+
+      <label class="label">Пароль: </label>
+      <input class="password input" type="password" name="password" />
+
+      <input class="button" type="submit" value="Логін" />
+    </form>
+    <img
+      id="loader"
+      class="loader"
+      src="./img/Circles-menu-3.gif"
+      alt="loader"
+    />
+    <script src="./login.js"></script>
+  </body>
+</html>
